@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://data.tcbang.xyz/uPic/BnArJi.png">
 <meta property="og:image" content="http://docker-saigon.github.io/img/event_state.png">
 <meta property="article:published_time" content="2022-08-04T08:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-04T08:57:19.539Z">
+<meta property="article:modified_time" content="2022-08-04T09:12:54.758Z">
 <meta property="article:author" content="xiaoxiaozi">
 <meta property="article:tag" content="读书笔记">
 <meta property="article:tag" content="Docker">
@@ -209,7 +209,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">961字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -293,14 +293,14 @@
 <li><p>容器运行的状态流转图：<br>   <img src="http://docker-saigon.github.io/img/event_state.png" alt="流转图"></p>
 <ul>
 <li>核心状态：<ul>
-<li>Created</li>
-<li>Running<blockquote>
+<li>Created:容器已经被创建，容器所需的相关资源已经准备就绪，但容器中的程序还未处于运行状态。</li>
+<li>Running:容器正在运行，也就是容器中的应用正在运行。<blockquote>
 <p>最为关键的状态，在这种状态中的容器，就是真正在运行的容器</p>
 </blockquote>
 </li>
-<li>Paused</li>
-<li>Stopped</li>
-<li>Deleted</li>
+<li>Paused:容器已暂停，表示容器中的所有程序都处于暂停 ( 不是停止 ) 状态。</li>
+<li>Stopped:容器处于停止状态，占用的资源和沙盒环境都依然存在，只是容器中的应用程序均已停止。</li>
+<li>Deleted:容器已删除，相关占用的资源及存储在 Docker 中的管理信息也都已释放和移除。</li>
 </ul>
 </li>
 </ul>
