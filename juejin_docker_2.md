@@ -11,6 +11,7 @@ toc: true
 写在前面：该[小册](https://juejin.cn/book/6844733746462064654)买过好久，笔记也早就整理好放在幕布上了。现整理在blog中，以便翻阅。
 ## Docker实践指南-笔记:了解Docker的核心组成
 <!--more-->
+
 ### 四大组成对象：
 - 镜像 Image
     - 定义：
@@ -61,6 +62,7 @@ toc: true
               - 在容器间共享
     - 定义：
          - 通过这几种方式进行数据共享或持久化的文件或目录，我们都称为数据卷 ( Volume )
+  
 ### Docker Engine
 - 工业线容器引擎，实现了Docker中最核心的软件，官方维护
 - 核心：
@@ -72,10 +74,11 @@ toc: true
          - 其内实现了镜像模块、容器模块、数据卷模块和网络模块
          - 向外暴露了一套RESTful API，可以通过这套接口对docker daemon进行操作
             >更确切地说，是通过这套RESTful API对docker daemon中运行的容器和其他资源进行管理
-            
+
     - docker Cli
          - 控制台程序
          - 通过docker daemon提供的Rest ful API衔接daemon和cli
+
 ### 一览图
   ![官网一览图](https://docs.docker.com/engine/images/architecture.svg)
 
