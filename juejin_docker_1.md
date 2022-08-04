@@ -6,7 +6,7 @@ categories:
 tags:
 - Docker
 - 读书笔记
-toc:true
+toc: true
 ---
 写在前面：该[小册](https://juejin.cn/book/6844733746462064654)买过好久，笔记也早就整理好放在幕布上了。现整理在blog中，以便翻阅。
 ## Docker实践指南-笔记:虚拟化与容器技术
