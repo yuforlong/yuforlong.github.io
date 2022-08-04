@@ -20,8 +20,9 @@
 <meta property="og:image" content="http://data.tcbang.xyz/uPic/nQtaES.jpg">
 <meta property="og:image" content="http://data.tcbang.xyz/uPic/tSHxqL.jpg">
 <meta property="og:image" content="http://data.tcbang.xyz/uPic/0Pkh9Y.jpg">
+<meta property="og:image" content="https://docs.docker.com/engine/images/architecture.svg">
 <meta property="article:published_time" content="2022-08-04T03:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-04T03:40:27.702Z">
+<meta property="article:modified_time" content="2022-08-04T03:46:09.726Z">
 <meta property="article:author" content="xiaoxiaozi">
 <meta property="article:tag" content="读书笔记">
 <meta property="article:tag" content="Docker">
@@ -217,7 +218,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">4分</span>
+      <span class="post-count">3分</span>
     </span>
   </span>
 </div>
@@ -230,6 +231,7 @@
     
     <p>写在前面：该<a target="_blank" rel="noopener" href="https://juejin.cn/book/6844733746462064654">小册</a>买过好久，笔记也早就整理好放在幕布上了。现整理在blog中，以便翻阅。</p>
 <h2 id="Docker实践指南-笔记-了解Docker的核心组成"><a href="#Docker实践指南-笔记-了解Docker的核心组成" class="headerlink" title="Docker实践指南-笔记:了解Docker的核心组成"></a>Docker实践指南-笔记:了解Docker的核心组成</h2><span id="more"></span>
+
 <h3 id="四大组成对象："><a href="#四大组成对象：" class="headerlink" title="四大组成对象："></a>四大组成对象：</h3><ul>
 <li>镜像 Image<ul>
 <li>定义：<ul>
@@ -314,14 +316,19 @@
 </ul>
 </li>
 <li>定义：<ul>
-<li>通过这几种方式进行数据共享或持久化的文件或目录，我们都称为数据卷 ( Volume )<h3 id="Docker-Engine"><a href="#Docker-Engine" class="headerlink" title="Docker Engine"></a>Docker Engine</h3></li>
+<li>通过这几种方式进行数据共享或持久化的文件或目录，我们都称为数据卷 ( Volume )</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>工业线容器引擎，实现了Docker中最核心的软件，官方维护</li>
-<li>核心：<ul>
-<li>docker daemon<ul>
+</ul>
+<h3 id="Docker-Engine"><a href="#Docker-Engine" class="headerlink" title="Docker Engine"></a>Docker Engine</h3><ul>
+<li><p>工业线容器引擎，实现了Docker中最核心的软件，官方维护</p>
+</li>
+<li><p>核心：</p>
+<ul>
+<li><p>docker daemon</p>
+<ul>
 <li>被称为Docker服务，通常以服务形式运行，以便静默提供如下功能：<ul>
 <li>容器管理</li>
 <li>应用编排</li>
@@ -335,14 +342,16 @@
 </li>
 </ul>
 </li>
-<li>docker Cli<ul>
+<li><p>docker Cli</p>
+<ul>
 <li>控制台程序</li>
-<li>通过docker daemon提供的Rest ful API衔接daemon和cli<h3 id="一览图"><a href="#一览图" class="headerlink" title="一览图"></a>一览图</h3><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/images/architecture.svg">官网一览图</a></li>
+<li>通过docker daemon提供的Rest ful API衔接daemon和cli</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<h3 id="一览图"><a href="#一览图" class="headerlink" title="一览图"></a>一览图</h3><p>  <img src="https://docs.docker.com/engine/images/architecture.svg" alt="官网一览图"></p>
 <h4 id="Docker-Build-的上下文"><a href="#Docker-Build-的上下文" class="headerlink" title="Docker Build 的上下文"></a>Docker Build 的上下文</h4><p>就上面的一览图，来理解下Docker Build的上下文。</p>
 <ol>
 <li>当运行 docker build 命令时，当前工作目录被称为构建上下文。</li>
