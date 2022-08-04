@@ -50,7 +50,7 @@ toc: true
      ![生命周期](http://data.tcbang.xyz/uPic/BnArJi.png)
 
 - 容器运行的状态流转图：
-     ![流转图](https://www.educative.io/cdn-cgi/image/f=auto,fit=contain,w=3000/api/edpresso/shot/5075830780198912/image/4578213252038656.png)
+     ![流转图](http://docker-saigon.github.io/img/event_state.png)
     - 核心状态：
          - Created
          - Running
