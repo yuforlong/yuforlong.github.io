@@ -72,6 +72,7 @@ toc: true
          - 其内实现了镜像模块、容器模块、数据卷模块和网络模块
          - 向外暴露了一套RESTful API，可以通过这套接口对docker daemon进行操作
             >更确切地说，是通过这套RESTful API对docker daemon中运行的容器和其他资源进行管理
+            
     - docker Cli
          - 控制台程序
          - 通过docker daemon提供的Rest ful API衔接daemon和cli
