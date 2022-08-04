@@ -76,7 +76,7 @@ toc: true
          - 控制台程序
          - 通过docker daemon提供的Rest ful API衔接daemon和cli
 ### 一览图
-  [官网一览图](https://docs.docker.com/engine/images/architecture.svg)
+  ![官网一览图](https://docs.docker.com/engine/images/architecture.svg)
 
 #### Docker Build 的上下文
 
