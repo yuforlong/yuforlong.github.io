@@ -6,24 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.xiaoxiaozi.com">
-  <title>操作系统导论思维导图 | 随便写点儿啥</title>
+  <title>掘金小册-开发者必备的 Docker 实践指南-笔记:了解Docker的核心组成 | 随便写点儿啥</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="操作系统导论思维导图断断续续的，终于读完了《操作系统导论》。过程中几次中断阅读，还好最终完成了。收益良多。 整理思维导图如下： 百度网盘，提取码为：k6vi   因为图较大，直接提供PDF吧  感谢 《操作系统导论》吐血万字整理 - 附下载地址及思维导图">
+  <meta name="description" content="写在前面：该小册买过好久，笔记也早就整理好放在幕布上了。现整理在blog中，以便翻阅。 Docker实践指南-笔记:了解Docker的核心组成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="操作系统导论思维导图">
-<meta property="og:url" content="http://www.xiaoxiaozi.com/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/index.html">
+<meta property="og:title" content="掘金小册-开发者必备的 Docker 实践指南-笔记:了解Docker的核心组成">
+<meta property="og:url" content="http://www.xiaoxiaozi.com/2022/08/04/juejin_docker_2/index.html">
 <meta property="og:site_name" content="随便写点儿啥">
-<meta property="og:description" content="操作系统导论思维导图断断续续的，终于读完了《操作系统导论》。过程中几次中断阅读，还好最终完成了。收益良多。 整理思维导图如下： 百度网盘，提取码为：k6vi   因为图较大，直接提供PDF吧  感谢 《操作系统导论》吐血万字整理 - 附下载地址及思维导图">
+<meta property="og:description" content="写在前面：该小册买过好久，笔记也早就整理好放在幕布上了。现整理在blog中，以便翻阅。 Docker实践指南-笔记:了解Docker的核心组成">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-20T06:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-20T06:20:49.362Z">
+<meta property="og:image" content="http://data.tcbang.xyz/uPic/nQtaES.jpg">
+<meta property="og:image" content="http://data.tcbang.xyz/uPic/tSHxqL.jpg">
+<meta property="og:image" content="http://data.tcbang.xyz/uPic/0Pkh9Y.jpg">
+<meta property="article:published_time" content="2022-08-04T03:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-04T03:40:27.702Z">
 <meta property="article:author" content="xiaoxiaozi">
-<meta property="article:tag" content="操作系统">
-<meta property="article:tag" content="思维导图">
 <meta property="article:tag" content="读书笔记">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://data.tcbang.xyz/uPic/nQtaES.jpg">
   
     <link rel="alternative" href="/atom.xml" title="随便写点儿啥" type="application/atom+xml">
   
@@ -172,14 +175,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Operating_Systems_Three_Easy_Pieces_Mind_Map" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-juejin_docker_2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      操作系统导论思维导图
+      掘金小册-开发者必备的 Docker 实践指南-笔记:了解Docker的核心组成
     </h1>
   
 
@@ -191,8 +194,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/" class="archive-article-date">
-        <time datetime="2022-07-20T06:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-20</time>
+<a href="/2022/08/04/juejin_docker_2/" class="archive-article-date">
+        <time datetime="2022-08-04T03:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
 </a>
 
   
@@ -205,7 +208,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">98字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -214,7 +217,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -225,14 +228,135 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="操作系统导论思维导图"><a href="#操作系统导论思维导图" class="headerlink" title="操作系统导论思维导图"></a>操作系统导论思维导图</h2><p>断断续续的，终于读完了《操作系统导论》。过程中几次中断阅读，还好最终完成了。收益良多。</p>
-<p>整理思维导图如下： <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/10i0TQ719Y-l-XL3CbjFuEA">百度网盘，提取码为：k6vi</a> </p>
-<blockquote>
-<p>因为图较大，直接提供PDF吧</p>
+    <p>写在前面：该<a target="_blank" rel="noopener" href="https://juejin.cn/book/6844733746462064654">小册</a>买过好久，笔记也早就整理好放在幕布上了。现整理在blog中，以便翻阅。</p>
+<h2 id="Docker实践指南-笔记-了解Docker的核心组成"><a href="#Docker实践指南-笔记-了解Docker的核心组成" class="headerlink" title="Docker实践指南-笔记:了解Docker的核心组成"></a>Docker实践指南-笔记:了解Docker的核心组成</h2><span id="more"></span>
+<h3 id="四大组成对象："><a href="#四大组成对象：" class="headerlink" title="四大组成对象："></a>四大组成对象：</h3><ul>
+<li>镜像 Image<ul>
+<li>定义：<ul>
+<li>可以理解为一个只读的文件包，包含了虚拟环境运行最原始文件系统的内容</li>
+</ul>
+</li>
+<li>Docker镜像<ul>
+<li>Docker基于AUFS作为底层文件系统实现</li>
+<li>实现了增量式的镜像结构<br> <img src="http://data.tcbang.xyz/uPic/nQtaES.jpg" alt="增量式镜像结构"><br> <img src="http://data.tcbang.xyz/uPic/tSHxqL.jpg" alt="分层"></li>
+<li>镜像层：<ul>
+<li>每次对镜像内容的修改，Docker都会将这些修改铸造成一个镜像层<blockquote>
+<p>​实际上Docker的镜像是无法被修改的，因为修改是会产生新镜像，而不是原镜像的更新</p>
 </blockquote>
-<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Foools/article/details/119492138">《操作系统导论》吐血万字整理 - 附下载地址及思维导图</a> </li>
+</li>
+<li>一个镜像其实是由其下层所有的镜像层组成</li>
+<li>每个镜像层单独拿出来，与它下面的镜像层都可以组成一个镜像</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>容器 Container<ul>
+<li>定义：<ul>
+<li>用于隔离虚拟环境的基础设施，在Docker里，被引申为隔离出来的虚拟环境</li>
+</ul>
+</li>
+<li>容器应该有三项内容组成：<ul>
+<li>一个Docker镜像</li>
+<li>一个程序运行环境</li>
+<li>一个指令集合</li>
+</ul>
+</li>
+<li>容器 VS 镜像：<ul>
+<li>如果把镜像理解为编程中的类，那么容器就可以理解为类的实例</li>
+<li>镜像内存放的是不可变化的东西，当以它们为基础的容器启动后，容器内也就成为了一个“活”的空间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>网络 Network<ul>
+<li>Docker中可以对每个容器的网络进行设置<br>  <img src="http://data.tcbang.xyz/uPic/0Pkh9Y.jpg" alt="容器网络"><ul>
+<li>还能在容器间建立虚拟网络，将数个容器包裹其中，同时与其他网络环境隔离</li>
+</ul>
+</li>
+<li>利用一些技术，Docker 能够在容器中营造独立的域名解析环境<ul>
+<li>这使得我们可以在不修改代码和配置的前提下直接迁移容器，Docker 会为我们完成新环境的网络适配</li>
+<li>我们甚至能够在不同的物理服务器间实现，让处在两台物理机上的两个 Docker 所提供的容器，加入到同一个虚拟网络中，形成完全屏蔽硬件的效果</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数据卷 Volume<ul>
+<li>虚拟机与文件系统：<ul>
+<li>虚拟机文件系统：<ul>
+<li>以往的虚拟机中，通常直接采用虚拟机的文件系统作为应用数据等文件的存储位置</li>
+<li>当虚拟机或者容器出现问题导致文件系统无法使用时：<ul>
+<li>通过镜像重置文件系统可以恢复应用运行，但是之前存放的数据也消失了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>单独挂载文件系统存放数据：<ul>
+<li>在虚拟机中繁琐<ul>
+<li>不但要搞定挂载在不同宿主机中实现的方法</li>
+<li>还要考虑文件系统兼容性</li>
+<li>以及虚拟操作系统配置等问题</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Docker：<ul>
+<li>受益于Union File System</li>
+<li>可以实现：<ul>
+<li>能够从宿主操作系统中挂载目录</li>
+<li>能够建立独立的目录持久存放数据</li>
+<li>在容器间共享</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>定义：<ul>
+<li>通过这几种方式进行数据共享或持久化的文件或目录，我们都称为数据卷 ( Volume )<h3 id="Docker-Engine"><a href="#Docker-Engine" class="headerlink" title="Docker Engine"></a>Docker Engine</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工业线容器引擎，实现了Docker中最核心的软件，官方维护</li>
+<li>核心：<ul>
+<li>docker daemon<ul>
+<li>被称为Docker服务，通常以服务形式运行，以便静默提供如下功能：<ul>
+<li>容器管理</li>
+<li>应用编排</li>
+<li>镜像分发等</li>
+</ul>
+</li>
+<li>其内实现了镜像模块、容器模块、数据卷模块和网络模块</li>
+<li>向外暴露了一套RESTful API，可以通过这套接口对docker daemon进行操作<blockquote>
+<p>更确切地说，是通过这套RESTful API对docker daemon中运行的容器和其他资源进行管理</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>docker Cli<ul>
+<li>控制台程序</li>
+<li>通过docker daemon提供的Rest ful API衔接daemon和cli<h3 id="一览图"><a href="#一览图" class="headerlink" title="一览图"></a>一览图</h3><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/images/architecture.svg">官网一览图</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Docker-Build-的上下文"><a href="#Docker-Build-的上下文" class="headerlink" title="Docker Build 的上下文"></a>Docker Build 的上下文</h4><p>就上面的一览图，来理解下Docker Build的上下文。</p>
+<ol>
+<li>当运行 docker build 命令时，当前工作目录被称为构建上下文。</li>
+<li>docker build 默认查找当前目录的 Dockerfile 作为构建输入，也可以通过 –f 指定 Dockerfile。<blockquote>
+<p>docker build –f ./Dockerfile</p>
+</blockquote>
+</li>
+<li>当 docker build 运行时，首先会把构建上下文传输给 docker daemon，把没用的文件包含在构建上下文时，会导致传输时间长，构建需要的资源多，构建出的镜像大等问题。</li>
+<li>可以通过.dockerignore文件从编译上下文排除某些文件</li>
 </ol>
+<blockquote>
+<p>不要将不需要的文件，放在Docker 的上下文中</p>
+</blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qianghaohao/article/details/87554255">深入理解 Docker 构建上下文</a></p>
 
     
 
@@ -247,7 +371,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://www.xiaoxiaozi.com/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/" title="操作系统导论思维导图" target="_blank">http://www.xiaoxiaozi.com/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/</a>
+          <a href="http://www.xiaoxiaozi.com/2022/08/04/juejin_docker_2/" title="掘金小册-开发者必备的 Docker 实践指南-笔记:了解Docker的核心组成" target="_blank">http://www.xiaoxiaozi.com/2022/08/04/juejin_docker_2/</a>
         </li>
         
         <li>
@@ -269,15 +393,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">思维导图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
         		</li>
       		
 		</ul>
@@ -289,7 +409,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/操作系统//" class="article-tag-list-link color5">操作系统</a>
+        			<a href="/categories/Docker//" class="article-tag-list-link color2">Docker</a>
         		</li>
       		
 		</ul>
@@ -344,7 +464,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.xiaoxiaozi.com/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.xiaoxiaozi.com/2022/08/04/juejin_docker_2/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -359,18 +479,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/08/04/juejin_docker_1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          掘金小册-开发者必备的 Docker 实践指南-笔记:虚拟化与容器技术
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/07/14/mind_the_step/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2022/08/04/juejin_docker_1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">掘金小册-开发者必备的 Docker 实践指南-笔记:虚拟化与容器技术</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -389,6 +500,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97-%E7%AC%94%E8%AE%B0-%E4%BA%86%E8%A7%A3Docker%E7%9A%84%E6%A0%B8%E5%BF%83%E7%BB%84%E6%88%90"><span class="toc-number">1.</span> <span class="toc-text">Docker实践指南-笔记:了解Docker的核心组成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E5%A4%A7%E7%BB%84%E6%88%90%E5%AF%B9%E8%B1%A1%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">四大组成对象：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-Engine"><span class="toc-number">1.2.</span> <span class="toc-text">Docker Engine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%A7%88%E5%9B%BE"><span class="toc-number">1.3.</span> <span class="toc-text">一览图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker-Build-%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-number">1.3.1.</span> <span class="toc-text">Docker Build 的上下文</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>

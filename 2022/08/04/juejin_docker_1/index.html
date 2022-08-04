@@ -6,24 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.xiaoxiaozi.com">
-  <title>操作系统导论思维导图 | 随便写点儿啥</title>
+  <title>掘金小册-开发者必备的 Docker 实践指南-笔记:虚拟化与容器技术 | 随便写点儿啥</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="操作系统导论思维导图断断续续的，终于读完了《操作系统导论》。过程中几次中断阅读，还好最终完成了。收益良多。 整理思维导图如下： 百度网盘，提取码为：k6vi   因为图较大，直接提供PDF吧  感谢 《操作系统导论》吐血万字整理 - 附下载地址及思维导图">
+  <meta name="description" content="写在前面：该小册买过好久，笔记也早就整理好放在幕布上了。现整理在blog中，以便翻阅。 Docker实践指南-笔记:虚拟化与容器技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="操作系统导论思维导图">
-<meta property="og:url" content="http://www.xiaoxiaozi.com/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/index.html">
+<meta property="og:title" content="掘金小册-开发者必备的 Docker 实践指南-笔记:虚拟化与容器技术">
+<meta property="og:url" content="http://www.xiaoxiaozi.com/2022/08/04/juejin_docker_1/index.html">
 <meta property="og:site_name" content="随便写点儿啥">
-<meta property="og:description" content="操作系统导论思维导图断断续续的，终于读完了《操作系统导论》。过程中几次中断阅读，还好最终完成了。收益良多。 整理思维导图如下： 百度网盘，提取码为：k6vi   因为图较大，直接提供PDF吧  感谢 《操作系统导论》吐血万字整理 - 附下载地址及思维导图">
+<meta property="og:description" content="写在前面：该小册买过好久，笔记也早就整理好放在幕布上了。现整理在blog中，以便翻阅。 Docker实践指南-笔记:虚拟化与容器技术">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-20T06:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-20T06:20:49.362Z">
+<meta property="og:image" content="http://data.tcbang.xyz/uPic/L7qEYc.jpg">
+<meta property="og:image" content="http://data.tcbang.xyz/uPic/jWzrRn.jpg">
+<meta property="og:image" content="http://data.tcbang.xyz/uPic/7ugViE.png">
+<meta property="article:published_time" content="2022-08-04T02:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-04T03:16:03.420Z">
 <meta property="article:author" content="xiaoxiaozi">
-<meta property="article:tag" content="操作系统">
-<meta property="article:tag" content="思维导图">
 <meta property="article:tag" content="读书笔记">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://data.tcbang.xyz/uPic/L7qEYc.jpg">
   
     <link rel="alternative" href="/atom.xml" title="随便写点儿啥" type="application/atom+xml">
   
@@ -172,14 +175,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Operating_Systems_Three_Easy_Pieces_Mind_Map" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-juejin_docker_1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      操作系统导论思维导图
+      掘金小册-开发者必备的 Docker 实践指南-笔记:虚拟化与容器技术
     </h1>
   
 
@@ -191,8 +194,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/" class="archive-article-date">
-        <time datetime="2022-07-20T06:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-20</time>
+<a href="/2022/08/04/juejin_docker_1/" class="archive-article-date">
+        <time datetime="2022-08-04T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
 </a>
 
   
@@ -205,7 +208,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">98字</span>
+      <span class="post-count">1.8k字</span>
     </span>
   </span>
 
@@ -214,7 +217,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">6分</span>
     </span>
   </span>
 </div>
@@ -225,14 +228,174 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="操作系统导论思维导图"><a href="#操作系统导论思维导图" class="headerlink" title="操作系统导论思维导图"></a>操作系统导论思维导图</h2><p>断断续续的，终于读完了《操作系统导论》。过程中几次中断阅读，还好最终完成了。收益良多。</p>
-<p>整理思维导图如下： <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/10i0TQ719Y-l-XL3CbjFuEA">百度网盘，提取码为：k6vi</a> </p>
-<blockquote>
-<p>因为图较大，直接提供PDF吧</p>
+    <p>写在前面：该<a target="_blank" rel="noopener" href="https://juejin.cn/book/6844733746462064654">小册</a>买过好久，笔记也早就整理好放在幕布上了。现整理在blog中，以便翻阅。</p>
+<h2 id="Docker实践指南-笔记-虚拟化与容器技术"><a href="#Docker实践指南-笔记-虚拟化与容器技术" class="headerlink" title="Docker实践指南-笔记:虚拟化与容器技术"></a>Docker实践指南-笔记:虚拟化与容器技术</h2><span id="more"></span>
+<h3 id="虚拟化技术："><a href="#虚拟化技术：" class="headerlink" title="虚拟化技术："></a>虚拟化技术：</h3><ul>
+<li>虚拟化技术是一种将计算机物理资源进行抽象、转换为虚拟的计算机资源提供给程序使用的技术。</li>
+<li>计算机资源：<ul>
+<li>CPU提供的运算控制资源</li>
+<li>硬盘提供的数据存储资源</li>
+<li>网卡提供的网络传输资源</li>
+</ul>
+</li>
+<li>为程序跨平台兼容而生：<ul>
+<li>程序对计算机资源的调用主要依赖于操作系统给出的接口，向物理硬件发送指令</li>
+<li>早期各平台、计算资源提供的接口、调用方式杂乱</li>
+<li>IBM创建了虚拟化技术，用来帮助程序快速适配不同平台的物理机器</li>
+<li>原理：<br>  <img src="http://data.tcbang.xyz/uPic/L7qEYc.jpg" alt="虚拟化原理图"></li>
+</ul>
+</li>
+<li>将虚拟化用于资源管理：<blockquote>
+<p>在虚拟化技术的发展过程中，人们逐渐发现了虚拟化的另一大用途，也就是将之应用于计算机资源的管理。</p>
 </blockquote>
-<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Foools/article/details/119492138">《操作系统导论》吐血万字整理 - 附下载地址及思维导图</a> </li>
-</ol>
+<ul>
+<li>原理：<ul>
+<li>虚拟化技术抽象计算机物理资源，进而加工成虚拟的计算资源</li>
+<li>所以虚拟化技术本身可以将数据做一些“手脚”来实现“管理”的目的</li>
+<li>例如：物理机无论是8G、16G还是32G内存，虚拟机都告诉程序机器只有4G内存，应用程序就都会按照4G这个虚拟值来处理逻辑</li>
+</ul>
+</li>
+<li>大幅提供了计算机资源的使用率<blockquote>
+<p>提高计算机资源使用率，而非减少程序资源的占用率，这两者看似很相近，其实并非是同一个概念。虚拟化技术能够提高计算机资源的使用率，是指利用虚拟化，我们可以将原来程序用不到的一些资源拿出来，分享给另外一些程序，让计算机资源不被浪费。</p>
+</blockquote>
+</li>
+<li>示例：<ul>
+<li>一台运行Nginx的机器，Ngx本身对系统资源消耗不高，使系统95%以上资源处于闲置</li>
+<li>通过虚拟化技术，把其他的一些程序放到机器上运行，就可以充分利用闲置资源</li>
+<li>好处是不需要为这些程序单独部署机器，从而节约成本</li>
+</ul>
+</li>
+<li>对比在同一操作系统里安装这些程序同时运行，为什么要进行虚拟化：<ul>
+<li>场景：<ul>
+<li>如果不同的应用程序使用同一个端口怎么办？</li>
+<li>不同的程序依赖同一个工具库的不同版本怎么办？</li>
+</ul>
+</li>
+<li>虚拟化：<ul>
+<li>通过资源隔离的方式，无形地可以把这些程序隔离在不同的虚拟环境中</li>
+<li>虚拟环境不同，运行在不同环境中的程序就不会互相干扰争抢资源了<h3 id="虚拟化的分类："><a href="#虚拟化的分类：" class="headerlink" title="虚拟化的分类："></a>虚拟化的分类：</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>大的分类：<ul>
+<li>硬件虚拟化<ul>
+<li>示例：<ul>
+<li>一、某平台CPU，可以将另外一个平台的指令集转换为自身指令集，并给程序完全运行在对应平台的感觉</li>
+<li>二、CPU能够自身模拟裂变，让程序或操作系统以为存在多个CPU，进而能够同时运行多个程序或者操作系统</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>软件虚拟化<ul>
+<li>示例：<ul>
+<li>一、通过一层夹杂在应用程序和硬件平台上的虚拟化实现软件来进行指令转换（模拟其他平台CPU）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>更加细化的分类：<ul>
+<li>平台虚拟化：<ul>
+<li>在操作系统和硬件平台间搭建虚拟化设施，使得整个操作系统都运行在虚拟后的环境中。</li>
+</ul>
+</li>
+<li>应用程序虚拟化：<ul>
+<li>在操作系统和应用程序间实现虚拟化，只让应用程序运行在虚拟化环境中。</li>
+</ul>
+</li>
+<li>内存虚拟化：<ul>
+<li>将不相邻的内存区，甚至硬盘空间虚拟成统一连续的内存地址，即我们常说的虚拟内存。</li>
+</ul>
+</li>
+<li>桌面虚拟化：<ul>
+<li>让本地桌面程序利用远程计算机资源运行，达到控制远程计算机的目的。</li>
+</ul>
+</li>
+<li>其他</li>
+</ul>
+</li>
+</ul>
+<h3 id="虚拟机："><a href="#虚拟机：" class="headerlink" title="虚拟机："></a>虚拟机：</h3><blockquote>
+<p>通常来说就是通过一个虚拟机监视器 ( Virtual Machine Monitor ) 的设施来隔离操作系统与硬件或者应用程序和操作系统，以此达到虚拟化的目的。这个夹在其中的虚拟机监视器，常常被称为 Hypervisor。</p>
+</blockquote>
+<ul>
+<li>图示：<br><img src="http://data.tcbang.xyz/uPic/jWzrRn.jpg" alt="虚拟机图示"></li>
+<li>示例：<ul>
+<li>VMware Workstation</li>
+<li>Xen</li>
+<li>Java虚拟机JVM</li>
+<li>PHP虚拟机HHVM</li>
+</ul>
+</li>
+<li>扩展：<ul>
+<li>所有的指令都必须经过虚拟机监视器的处理。这也就意味着，虚拟机的性能是低下的。</li>
+<li>例如运行在 ZendVM 或者 HHVM 中的 PHP 程序，所有代码虽然编译成了 Opcode 码，但其依然是通过虚拟机才最终转换为机器所能识别的机器码去执行。</li>
+<li>真实的虚拟机程序常常不完全遵循Hypervisor设计结构，引入一些其他技术来解决效率问题</li>
+</ul>
+</li>
+</ul>
+<h3 id="容器技术："><a href="#容器技术：" class="headerlink" title="容器技术："></a>容器技术：</h3><blockquote>
+<p>容器技术，指的是操作系统自身支持一些接口，能够让应用程序间可以互不干扰的独立运行，并且能够对其在运行中所使用的资源进行干预。</p>
+</blockquote>
+<ul>
+<li>全新意义上的虚拟化技术</li>
+<li>按分类和实现方式来说，应该属于操作系统虚拟化的范畴——由操作系统提供虚拟化的支持</li>
+<li>名字由来：<ul>
+<li>由于应用程序的运行被隔离在了一个独立的运行环境之中，这个独立的运行环境就好似一个容器，包裹住了应用程序，这就是容器技术名字的由来。</li>
+</ul>
+</li>
+<li>运行在容器虚拟化中的应用程序，在运行效率上与真实运行在物理平台上的应用程序不相上下</li>
+<li>指令转换？：<ul>
+<li>容器技术没有做指令转换</li>
+<li>运行在容器中的应用程序自身必须支持在真实操作系统上运行——必须遵循硬件平台的指令规则<blockquote>
+<p>无法解决程序跨平台兼容的问题</p>
+</blockquote>
+</li>
+<li>容器技术提供了相对独立的应用程序运行的环境，也提供了资源控制的功能，所以我们依然可以归纳其为一种实现不完全的虚拟化技术<h3 id="虚拟机-Vs-容器："><a href="#虚拟机-Vs-容器：" class="headerlink" title="虚拟机 Vs 容器："></a>虚拟机 Vs 容器：</h3></li>
+</ul>
+</li>
+<li>剖析图：<br><img src="http://data.tcbang.xyz/uPic/7ugViE.png" alt="Docker官网图"></li>
+<li>结论：<ul>
+<li>由于没有了虚拟操作系统和虚拟机监视器这两个层次，大幅减少了应用程序运行带来的额外消耗。</li>
+<li>所有在容器中的应用程序其实完全运行在了宿主操作系统中，与其他真实运行在其中的应用程序在指令运行层面是完全没有任何区别的。</li>
+</ul>
+</li>
+<li>对比：<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>容器</th>
+<th>虚拟机</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>启动</td>
+<td>秒级</td>
+<td>分钟级</td>
+</tr>
+<tr>
+<td>硬盘使用</td>
+<td>一般为MB</td>
+<td>一般为GB</td>
+</tr>
+<tr>
+<td>性能</td>
+<td>接近原生</td>
+<td>弱于</td>
+</tr>
+<tr>
+<td>系统支持量</td>
+<td>单机支持上千个容器</td>
+<td>一般几十个</td>
+</tr>
+</tbody></table>
+<h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h3></li>
+<li>容器层之下没有了统一的hypervisor，Dockfile指定的软件，在移植时还需要指定操作系统才能运行</li>
+</ul>
 
     
 
@@ -247,7 +410,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://www.xiaoxiaozi.com/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/" title="操作系统导论思维导图" target="_blank">http://www.xiaoxiaozi.com/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/</a>
+          <a href="http://www.xiaoxiaozi.com/2022/08/04/juejin_docker_1/" title="掘金小册-开发者必备的 Docker 实践指南-笔记:虚拟化与容器技术" target="_blank">http://www.xiaoxiaozi.com/2022/08/04/juejin_docker_1/</a>
         </li>
         
         <li>
@@ -269,15 +432,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">思维导图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
         		</li>
       		
 		</ul>
@@ -289,7 +448,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/操作系统//" class="article-tag-list-link color5">操作系统</a>
+        			<a href="/categories/Docker//" class="article-tag-list-link color2">Docker</a>
         		</li>
       		
 		</ul>
@@ -344,7 +503,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.xiaoxiaozi.com/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.xiaoxiaozi.com/2022/08/04/juejin_docker_1/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -359,18 +518,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/08/04/juejin_docker_1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/08/04/juejin_docker_2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          掘金小册-开发者必备的 Docker 实践指南-笔记:虚拟化与容器技术
+          掘金小册-开发者必备的 Docker 实践指南-笔记:了解Docker的核心组成
         
       </div>
     </a>
   
   
-    <a href="/2022/07/14/mind_the_step/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">操作系统导论思维导图</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -389,6 +548,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97-%E7%AC%94%E8%AE%B0-%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF"><span class="toc-number">1.</span> <span class="toc-text">Docker实践指南-笔记:虚拟化与容器技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">虚拟化技术：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%8C%96%E7%9A%84%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">虚拟化的分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">虚拟机：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">容器技术：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA-Vs-%E5%AE%B9%E5%99%A8%EF%BC%9A"><span class="toc-number">1.5.</span> <span class="toc-text">虚拟机 Vs 容器：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="toc-number">1.6.</span> <span class="toc-text">补充：</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
