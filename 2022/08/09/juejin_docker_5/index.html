@@ -6,17 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.xiaoxiaozi.com">
-  <title>Archives: 2022 | 随便写点儿啥</title>
+  <title>掘金小册-开发者必备的 Docker 实践指南-笔记:Dockerfile | 随便写点儿啥</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="随便写点儿啥">
-<meta property="og:url" content="http://www.xiaoxiaozi.com/archives/2022/index.html">
+  <meta name="description" content="写在前面：该小册买过好久，笔记也早就整理好放在幕布上了。现整理在blog中，以便翻阅。 Docker实践指南-笔记:Dockerfile">
+<meta property="og:type" content="article">
+<meta property="og:title" content="掘金小册-开发者必备的 Docker 实践指南-笔记:Dockerfile">
+<meta property="og:url" content="http://www.xiaoxiaozi.com/2022/08/09/juejin_docker_5/index.html">
 <meta property="og:site_name" content="随便写点儿啥">
+<meta property="og:description" content="写在前面：该小册买过好久，笔记也早就整理好放在幕布上了。现整理在blog中，以便翻阅。 Docker实践指南-笔记:Dockerfile">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://data.tcbang.xyz/uPic/BTWLY5.jpg">
+<meta property="og:image" content="http://data.tcbang.xyz/uPic/H5vpdA.jpg">
+<meta property="article:published_time" content="2022-08-09T07:30:00.000Z">
+<meta property="article:modified_time" content="2022-08-09T07:54:41.032Z">
 <meta property="article:author" content="xiaoxiaozi">
+<meta property="article:tag" content="读书笔记">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://data.tcbang.xyz/uPic/BTWLY5.jpg">
   
     <link rel="alternative" href="/atom.xml" title="随便写点儿啥" type="application/atom+xml">
   
@@ -165,41 +174,375 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-juejin_docker_5" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      掘金小册-开发者必备的 Docker 实践指南-笔记:Dockerfile
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2022/08/09/juejin_docker_5/" class="archive-article-date">
         <time datetime="2022-08-09T07:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-09</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/08/09/juejin_docker_5/" target="_blank">掘金小册-开发者必备的 Docker 实践指南-笔记:Dockerfile</a>
   
-    </h1>
-  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.9k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">6分</span>
+    </span>
+  </span>
+</div>
 
 
-        <div class="article-info info-on-right">
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>写在前面：该<a target="_blank" rel="noopener" href="https://juejin.cn/book/6844733746462064654">小册</a>买过好久，笔记也早就整理好放在幕布上了。现整理在blog中，以便翻阅。</p>
+<h2 id="Docker实践指南-笔记-Dockerfile"><a href="#Docker实践指南-笔记-Dockerfile" class="headerlink" title="Docker实践指南-笔记:Dockerfile"></a>Docker实践指南-笔记:Dockerfile</h2><span id="more"></span>
+
+<h3 id="关于Dockerfile"><a href="#关于Dockerfile" class="headerlink" title="关于Dockerfile"></a>关于Dockerfile</h3><ul>
+<li>简介：<ul>
+<li>Dockerfile 是一个用来构建镜像的文本文件，文本内容包含了一条条构建镜像所需的指令和说明。</li>
+<li>包含了构建镜像过程中需要执行的命令和其他操作</li>
+</ul>
+</li>
+<li>优势：<ul>
+<li>Dockerfile 的体积远小于镜像包，更容易进行快速迁移和部署。</li>
+<li>环境构建流程记录了 Dockerfile 中，能够直观的看到镜像构建的顺序和逻辑。</li>
+<li>使用 Dockerfile 来构建镜像能够更轻松的实现自动部署等自动化流程。</li>
+<li>在修改环境搭建细节时，修改 Dockerfile 文件要比从新提交镜像来的轻松、简单。</li>
+</ul>
+</li>
+</ul>
+<h3 id="编写Dockerfile"><a href="#编写Dockerfile" class="headerlink" title="编写Dockerfile"></a>编写Dockerfile</h3><ul>
+<li>文件内容：<ul>
+<li>注释</li>
+<li>指令</li>
+</ul>
+</li>
+<li>Dockerfile的指令分类：<br>这些指令分类，不是一定都要出现在一个Docerfile里的！<ul>
+<li>基础指令：用于定义新镜像的基础和性质。</li>
+<li>控制指令：是指导镜像构建的核心部分，用于描述镜像在构建过程中需要执行的命令。</li>
+<li>引入指令：用于将外部文件直接引入到构建镜像内部。</li>
+<li>执行指令：能够为基于镜像所创建的容器，指定在启动时需要执行的脚本或命令。</li>
+<li>配置指令：对镜像以及基于镜像所创建的容器，可以通过配置指令对其网络、用户等内容进行配置。</li>
+</ul>
+</li>
+</ul>
+<h3 id="常见Dockerfile指令"><a href="#常见Dockerfile指令" class="headerlink" title="常见Dockerfile指令"></a>常见Dockerfile指令</h3><ul>
+<li>FROM<ul>
+<li>作用：<ul>
+<li>指定一个基础镜像</li>
+<li>接下来的所有指令都是基于这个镜像展开的</li>
+</ul>
+</li>
+<li>三种形式：<blockquote>
+<p>无论哪种形式，其核心逻辑就是指出能够被Docker识别的那个镜像，好让Docker从那个镜像之上开始构建工作</p>
+</blockquote>
+<ul>
+<li>FROM <image> [AS <name>]</li>
+<li>FROM <image>[:<tag>] [AS <name>]</li>
+<li>FROM <image>[@<digest>] [AS <name>]</li>
+</ul>
+</li>
+<li>说明：<ul>
+<li>Docfile中的第一条指令必须是FROM指令，如果没有基础镜像，一切构建都无法开展</li>
+<li>可以多次出现FROM指令<ul>
+<li>第二次或之后出现时：<ul>
+<li>表示在此刻构建时，要将当前指出镜像的内容合并到此刻构建镜像的内容里</li>
+<li>方便合并两个镜像的功能</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>RUN<ul>
+<li>作用：<ul>
+<li>用于向控制台发送命令</li>
+<li>构建时Docker会执行RUN之后的这些命令，并将它们对文件系统的修改记录下来，形成镜像的变化</li>
+</ul>
+</li>
+<li>格式：<ul>
+<li>RUN <command></li>
+<li>RUN [“executable”, “param1”, “param2”]</li>
+</ul>
+</li>
+<li>说明：<ul>
+<li>支持\换行，单行太长，可以进行切割，方便阅读</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ENTRYPOINT 和 CMD<ul>
+<li>作用：<ul>
+<li>定义容器启动时，进程号为1的进程命令</li>
+</ul>
+</li>
+<li>格式：<ul>
+<li>ENTRYPOINT [“executable”, “param1”, “param2”]</li>
+<li>ENTRYPOINT command param1 param2</li>
+<li>CMD [“executable”,”param1”,”param2”]</li>
+<li>CMD [“param1”,”param2”]</li>
+<li>CMD command param1 param2</li>
+</ul>
+</li>
+<li>说明：<ul>
+<li>二者用法近似，都是给出需要执行的命令，并且都可以为空</li>
+<li>当二者同时给出时，CMD中的内容会作为ENTRYPOINT定义命令的参数，最终执行的是ENTRYPOINT中给出的命令</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>EXPOSE<ul>
+<li>作用：<ul>
+<li>为镜像指定要暴露的端口</li>
+</ul>
+</li>
+<li>格式：<ul>
+<li>EXPOSE <port> [<port>/<protocol>…]</li>
+</ul>
+</li>
+<li>说明：<ul>
+<li>通过EXPOSE配置了端口暴露定义，基于这个镜像所创建的容器，被其他容器通过–link选项连接时，就能够直接允许来自其他容器对这些端口的访问了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>VOLUME<ul>
+<li>作用：<ul>
+<li>定义基于此镜像的容器所自动建立的数据卷</li>
+</ul>
+</li>
+<li>格式：<ul>
+<li>VOLUME [“/data”]</li>
+</ul>
+</li>
+<li>说明：<ul>
+<li>在 VOLUME 指令中定义的目录，在基于新镜像创建容器时，会自动建立为数据卷，不需要我们再单独使用 -v 选项来配置了。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>COPY 和 ADD<ul>
+<li>作用：<ul>
+<li>使用 COPY 或 ADD 指令能够帮助我们直接从宿主机的文件系统里拷贝内容到镜像里的文件系统中</li>
+</ul>
+</li>
+<li>格式：<ul>
+<li>COPY [–chown=<user>:<group>] <src>… <dest></li>
+<li>ADD [–chown=<user>:<group>] <src>… <dest></li>
+<li>COPY [–chown=<user>:<group>] [“<src>“,… “<dest>“]</li>
+<li>ADD [–chown=<user>:<group>] [“<src>“,… “<dest>“]</li>
+</ul>
+</li>
+<li>说明：<ul>
+<li>为什么需要COPY或ADD？<ul>
+<li>在制作新的镜像的时候，我们可能需要将一些软件配置、程序代码、执行脚本等直接导入到镜像内的文件系统里</li>
+</ul>
+</li>
+<li>COPY和ADD区别：<ul>
+<li>指令定义完全一样</li>
+<li>ADD能够支持使用网络端的URL地址作为src源</li>
+<li>在源文件被识别为压缩包时，ADD命令会自动进行解压</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="构建镜像："><a href="#构建镜像：" class="headerlink" title="构建镜像："></a>构建镜像：</h3><ul>
+<li>docker build<ul>
+<li>示例：<ul>
+<li>sudo docker build ./webapp</li>
+</ul>
+</li>
+<li>参数：<ul>
+<li>后面的参数是目录路径，而非Dockerfile文件的路径</li>
+<li>这个目录会作为构建的环境目录<ul>
+<li>使用COPY或ADD拷贝文件到构建的新镜像时，会以这个目录作为基础目录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>说明：<ul>
+<li>默认情况 下，docker build也会在参数目录下寻找名为Dockerfile的文件</li>
+<li>如果Dockerfile不在这个目录下，或者有别的文件名，可以通过-f指定Dockerfile的路径<ul>
+<li>sudo docker build -t webapp:latest -f ./webapp/a.Dockerfile ./webapp</li>
+</ul>
+</li>
+<li>增加-t选项可以用来指定新生成镜像的名称：<ul>
+<li>sudo docker build -t webapp:latest ./webapp</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="构建中使用变量"><a href="#构建中使用变量" class="headerlink" title="构建中使用变量"></a>构建中使用变量</h3><ul>
+<li><p>参数变量：</p>
+<ul>
+<li><p>ARG命令创建变量名</p>
+<ul>
+<li>ARG TOMCAT_VERSION</li>
+</ul>
+</li>
+<li><p>使用变量：</p>
+<ul>
+<li>$TOMCAT_VERSION</li>
+</ul>
+</li>
+<li><p>指定变量的值：</p>
+<ul>
+<li>docker build时传递–build-arg TOMCAT_VERSION=1.2</li>
+</ul>
+</li>
+<li><p>示例：</p>
+<ul>
+<li><p>Dockerfile</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ARG  CODE_VERSION=latest</span><br><span class="line">FROM base:<span class="variable">$&#123;CODE_VERSION&#125;</span></span><br><span class="line">CMD  /code/run-app</span><br><span class="line"></span><br><span class="line">FROM extras:<span class="variable">$&#123;CODE_VERSION&#125;</span></span><br><span class="line">CMD  /code/run-extras</span><br></pre></td></tr></table></figure></li>
+<li><p>build</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker build --build-arg TOMCAT_MAJOR=8 --build-arg TOMCAT_VERSION=8.0.53 -t tomcat:8.0 ./tomcat</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>环境变量：</p>
+<ul>
+<li>ENV指定环境变量：<ul>
+<li>ENV TOMCAT_VERSION 8.0.53</li>
+</ul>
+</li>
+<li>使用环境变量：<ul>
+<li>$TOMCAT_VERSION</li>
+</ul>
+</li>
+<li>对比参数变量：<ul>
+<li>环境变量不仅能够影响构建，还能够影响基于此镜像创建的容器</li>
+<li>环境变量设置的实质，其实就是定义操作系统环境变量<ul>
+<li>在运行的容器里，一样拥有这些环境变量，而容器中运行的程序也能够得到这些变量的值</li>
+</ul>
+</li>
+<li>环境变量的值不是在构建指令中传入的，而是在Dockerfile编写的<ul>
+<li>如需修改，需要修改Dockerfile</li>
+</ul>
+</li>
+<li>如果变量名与参数变量名称相同，ENV指令定义的变量，永远会覆盖ARG所定义的变量<ul>
+<li>即使它们定义时的顺序是相反的！</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>说明：<ul>
+<li>在容器运行时如果想覆盖环境变量的值，可以在创建容器时使用-e 或者  –env<ul>
+<li>sudo docker run -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.7</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="合并命令："><a href="#合并命令：" class="headerlink" title="合并命令："></a>合并命令：</h3><ul>
+<li><p>RUN命令</p>
+<ul>
+<li>尽量使用RUN命令时，采用换行方式分隔多个命令</li>
+<li>而不是多条RUN命令</li>
+</ul>
+</li>
+<li><p>原因：</p>
+<ul>
+<li>看似连续的构建过程，其实由多个小段组成</li>
+<li>每一条能够形成对文件系统改动的指令在被执行前，会先基于上条命令的结果启动一个容器</li>
+<li>在容器中运行这条指令的内容，之后将结果打包成一个镜像层</li>
+<li>如此反复，最终形成镜像</li>
+<li>图示：<br><img src="http://data.tcbang.xyz/uPic/BTWLY5.jpg" alt="分层示例"></li>
+</ul>
+</li>
+<li><p>示例：</p>
+   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">RUN apt-get update; \</span><br><span class="line">apt-get install -y --no-install-recommends <span class="variable">$fetchDeps</span>; \</span><br><span class="line">rm -rf /var/lib/apt/lists/;</span><br><span class="line">RUN apt-get update</span><br><span class="line">RUN apt-get install -y --no-install-recommends <span class="variable">$fetchDeps</span></span><br><span class="line">RUN rm -rf /var/lib/apt/lists/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="搭配ENTRYPOINT和CMD"><a href="#搭配ENTRYPOINT和CMD" class="headerlink" title="搭配ENTRYPOINT和CMD"></a>搭配ENTRYPOINT和CMD</h3><ul>
+<li>组合形式：<br>   <img src="http://data.tcbang.xyz/uPic/H5vpdA.jpg" alt="搭配ENTRYPOINT和CMD"></li>
+<li>两个命令设计目的：<ul>
+<li>ENTRYPOINT指令主要用于对容器进行一些初始化<ul>
+<li>使用脚本文件作为ENTRYPOINT内容是常见的做法，因为容器运行初始化的命令相对较多，全部放置在ENTRYPOINT后会特别复杂</li>
+</ul>
+</li>
+<li>CMD指令用于真正定义容器中主程序的启动命令</li>
+</ul>
+</li>
+<li>说明：<ul>
+<li>创建容器时可以改写容器主程序的启动命令，这个覆盖只会覆盖CMD中定义的内容，而不会影响ENTRYPOINT中的内容</li>
+<li>ENTRYPOINT没有CMD常用</li>
+</ul>
+</li>
+</ul>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          xiaoxiaozi
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://www.xiaoxiaozi.com/2022/08/09/juejin_docker_5/" title="掘金小册-开发者必备的 Docker 实践指南-笔记:Dockerfile" target="_blank">http://www.xiaoxiaozi.com/2022/08/09/juejin_docker_5/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -215,7 +558,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -228,367 +571,118 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.xiaoxiaozi.com/2022/08/09/juejin_docker_5/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/08/08/juejin_docker_4/" class="archive-article-date">
-        <time datetime="2022-08-08T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-08</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/08/08/juejin_docker_4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">掘金小册-开发者必备的 Docker 实践指南-笔记:运行和管理容器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/08/08/juejin_docker_4/" target="_blank">掘金小册-开发者必备的 Docker 实践指南-笔记:运行和管理容器</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Docker//" class="article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker%E5%AE%9E%E8%B7%B5%E6%8C%87%E5%8D%97-%E7%AC%94%E8%AE%B0-Dockerfile"><span class="toc-number">1.</span> <span class="toc-text">Docker实践指南-笔记:Dockerfile</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8EDockerfile"><span class="toc-number">1.1.</span> <span class="toc-text">关于Dockerfile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99Dockerfile"><span class="toc-number">1.2.</span> <span class="toc-text">编写Dockerfile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81Dockerfile%E6%8C%87%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">常见Dockerfile指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E9%95%9C%E5%83%8F%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">构建镜像：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8F%98%E9%87%8F"><span class="toc-number">1.5.</span> <span class="toc-text">构建中使用变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">1.6.</span> <span class="toc-text">合并命令：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%AD%E9%85%8DENTRYPOINT%E5%92%8CCMD"><span class="toc-number">1.7.</span> <span class="toc-text">搭配ENTRYPOINT和CMD</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/08/04/juejin_docker_3/" class="archive-article-date">
-        <time datetime="2022-08-04T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/08/04/juejin_docker_3/" target="_blank">掘金小册-开发者必备的 Docker 实践指南-笔记:镜像与容器</a>
-  
-    </h1>
-  
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Docker//" class="article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/08/04/juejin_docker_2/" class="archive-article-date">
-        <time datetime="2022-08-04T03:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/08/04/juejin_docker_2/" target="_blank">掘金小册-开发者必备的 Docker 实践指南-笔记:了解Docker的核心组成</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Docker//" class="article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/08/04/juejin_docker_1/" class="archive-article-date">
-        <time datetime="2022-08-04T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/08/04/juejin_docker_1/" target="_blank">掘金小册-开发者必备的 Docker 实践指南-笔记:虚拟化与容器技术</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Docker//" class="article-tag-list-link color2">Docker</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/" class="archive-article-date">
-        <time datetime="2022-07-20T06:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-20</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/" target="_blank">操作系统导论思维导图</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">思维导图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">读书笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/操作系统//" class="article-tag-list-link color5">操作系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/07/14/mind_the_step/" class="archive-article-date">
-        <time datetime="2022-07-14T10:33:24.271Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-14</time>
-</a>
-
-        </div>
-    	 
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/02/16/hello-world/" class="archive-article-date">
-        <time datetime="2022-02-16T07:49:52.855Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-16</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/02/16/hello-world/" target="_blank">Hello World</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -640,8 +734,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
