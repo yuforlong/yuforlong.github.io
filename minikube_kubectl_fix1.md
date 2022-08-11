@@ -117,7 +117,7 @@ toc: true
    minikube start --image-mirror-country='cn'
    ```
 
-   ```txt
+   ```bash
     😄  Darwin 12.5 (arm64) 上的 minikube v1.22.0
     ✨  根据现有的配置文件使用 docker 驱动程序
     👍  Starting control plane node minikube in cluster minikube
@@ -130,7 +130,7 @@ toc: true
         ▪ Using image registry.cn-hangzhou.aliyuncs.com/google_containers/k8s-minikube/storage-provisioner:v5 (global image repository)
     🌟  Enabled addons: storage-provisioner, default-storageclass
     🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by defaul
-    
+
    ```   
 
 
