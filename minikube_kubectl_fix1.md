@@ -117,22 +117,19 @@ toc: true
    minikube start --image-mirror-country='cn'
    ```
 
-   ```bash
-    😄  Darwin 12.5 (arm64) 上的 minikube v1.22.0
-    ✨  根据现有的配置文件使用 docker 驱动程序
-    👍  Starting control plane node minikube in cluster minikube
-    🚜  Pulling base image ...
-    🔄  Restarting existing docker container for "minikube" ...
-    ❗  The image 'registry.cn-hangzhou.aliyuncs.com/google_containers/coredns/coredns:v1.8.0' was not found; unable to add it to cache.
-    🐳  正在 Docker 20.10.7 中准备 Kubernetes v1.21.2…
-    ❌  Unable to load cached images: loading cached images: stat /Users/xxxxxxx/.minikube/cache/images/registry.cn-hangzhou.aliyuncs.com/google_containers/coredns/coredns_v1.8.0: no such file or directory
-    🔎  Verifying Kubernetes components...
-        ▪ Using image registry.cn-hangzhou.aliyuncs.com/google_containers/k8s-minikube/storage-provisioner:v5 (global image repository)
-    🌟  Enabled addons: storage-provisioner, default-storageclass
-    🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by defaul
 
-   ```   
-
+   >😄  Darwin 12.5 (arm64) 上的 minikube v1.22.0
+   >✨  根据现有的配置文件使用 docker 驱动程序
+   >👍  Starting control plane node minikube in cluster minikube
+   >🚜  Pulling base image ...
+   >🔄  Restarting existing docker container for "minikube" ...
+   >❗  The image 'registry.cn-hangzhou.aliyuncs.com/>google_containers/coredns/coredns:v1.8.0' was not found; >unable to add it to cache.
+   >🐳  正在 Docker 20.10.7 中准备 Kubernetes v1.21.2…
+   >❌  Unable to load cached images: loading cached images: stat />Users/xxxxxxx/.minikube/cache/images/registry.cn-hangzhou.>aliyuncs.com/google_containers/coredns/coredns_v1.8.0: no >such file or directory
+   >🔎  Verifying Kubernetes components...
+   >    ▪ Using image registry.cn-hangzhou.aliyuncs.com/google_containers/k8s-minikube/storage-provisioner:v5 (global image repository)
+   >🌟  Enabled addons: storage-provisioner, default-storageclass
+   >🏄  Done! kubectl is now configured to use "minikube" cluster >and "default" namespace by defaul
 
 5. 再来一次，成功了。看来在重启docker后，minikube需要重新启动。
 
