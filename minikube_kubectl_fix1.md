@@ -130,7 +130,9 @@ toc: true
         ▪ Using image registry.cn-hangzhou.aliyuncs.com/google_containers/k8s-minikube/storage-provisioner:v5 (global image repository)
     🌟  Enabled addons: storage-provisioner, default-storageclass
     🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by defaul
+    
    ```   
+
 
 5. 再来一次，成功了。看来在重启docker后，minikube需要重新启动。
 
