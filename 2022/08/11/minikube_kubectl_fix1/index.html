@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.xiaoxiaozi.com">
-  <title>随便写点儿啥</title>
+  <title>minikube mac 踩坑实录 | 随便写点儿啥</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="童言童语和邻居一起带孩子去怀柔，游山玩水。 夜宿民宿，孩子觉得新奇（虽入夜，孩子有些紧张，哭声不止。）。楼梯上，跑来跑去。 忽指着楼梯拐角所贴提示：“小心台阶”而言“注意脚下”。 大笑~">
+  <meta name="description" content="在mac使用minikube和kubectl测试，没想到也能踩这么多坑。逐一记录如下： 踩坑一：toomanyrequests">
 <meta property="og:type" content="article">
-<meta property="og:title" content="随便写点儿啥">
-<meta property="og:url" content="http://www.xiaoxiaozi.com/2022/07/14/mind_the_step/index.html">
+<meta property="og:title" content="minikube mac 踩坑实录">
+<meta property="og:url" content="http://www.xiaoxiaozi.com/2022/08/11/minikube_kubectl_fix1/index.html">
 <meta property="og:site_name" content="随便写点儿啥">
-<meta property="og:description" content="童言童语和邻居一起带孩子去怀柔，游山玩水。 夜宿民宿，孩子觉得新奇（虽入夜，孩子有些紧张，哭声不止。）。楼梯上，跑来跑去。 忽指着楼梯拐角所贴提示：“小心台阶”而言“注意脚下”。 大笑~">
+<meta property="og:description" content="在mac使用minikube和kubectl测试，没想到也能踩这么多坑。逐一记录如下： 踩坑一：toomanyrequests">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-14T10:33:24.271Z">
-<meta property="article:modified_time" content="2022-07-14T10:33:24.271Z">
+<meta property="article:published_time" content="2022-08-11T09:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-11T10:08:55.502Z">
 <meta property="article:author" content="xiaoxiaozi">
+<meta property="article:tag" content="k8s">
+<meta property="article:tag" content="minikube">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="随便写点儿啥" type="application/atom+xml">
@@ -169,15 +171,126 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mind_the_step" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-minikube_kubectl_fix1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+  
+  
+    <h1 class="article-title" itemprop="name">
+      minikube mac 踩坑实录
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2022/08/11/minikube_kubectl_fix1/" class="archive-article-date">
+        <time datetime="2022-08-11T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-11</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">573字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="童言童语"><a href="#童言童语" class="headerlink" title="童言童语"></a>童言童语</h2><p>和邻居一起带孩子去怀柔，游山玩水。</p>
-<p>夜宿民宿，孩子觉得新奇（虽入夜，孩子有些紧张，哭声不止。）。楼梯上，跑来跑去。</p>
-<p>忽指着楼梯拐角所贴提示：“小心台阶”而言“注意脚下”。</p>
-<p>大笑~</p>
+    <p>在mac使用minikube和kubectl测试，没想到也能踩这么多坑。逐一记录如下：</p>
+<h2 id="踩坑一：toomanyrequests"><a href="#踩坑一：toomanyrequests" class="headerlink" title="踩坑一：toomanyrequests"></a>踩坑一：toomanyrequests</h2><span id="more"></span>
+
+<ul>
+<li>过程</li>
+</ul>
+<ol>
+<li><p>执行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minikube kubectl -- run ngx --image=nginx:alpine --force</span><br></pre></td></tr></table></figure></li>
+<li><p>查看pod status</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minikube kubectl get pod ngx</span><br></pre></td></tr></table></figure>
+
+<p>其状态显示为：ErrImagePull 或 ImagePullBackoff</p>
+</li>
+<li><p>查看详情</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minikube kubectl describe pod ngx</span><br></pre></td></tr></table></figure></li>
+<li><p>报错信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Failed to pull image &quot;nginx:alpine&quot;: rpc error: code = Unknown desc = Error response from daemon: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>修复</li>
+</ul>
+<ol>
+<li><p>docker login 方法：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/309560768">参考</a></p>
+<p>尝试注册docker账号，并通过docker login，无效。</p>
+</li>
+<li><p>更换镜像方法: <a target="_blank" rel="noopener" href="https://www.cnblogs.com/xmai/p/15080572.html">参考</a></p>
+<p>由于未找到：/etc/docker/daemon.json 而无果。后<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_55613022/article/details/124490832">参考</a> 在GUI上配置了如下内容得以解决。但是又引入了第二个问题：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     <span class="attr">&quot;features&quot;</span>: &#123;</span><br><span class="line">         <span class="attr">&quot;buildkit&quot;</span>: <span class="literal">true</span></span><br><span class="line">     &#125;,</span><br><span class="line">     <span class="attr">&quot;experimental&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">     <span class="attr">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">         <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span>,</span><br><span class="line">         <span class="string">&quot;https://kfwkfulq.mirror.aliyuncs.com&quot;</span>,</span><br><span class="line">         <span class="string">&quot;https://2lqq34jg.mirror.aliyuncs.com&quot;</span>,</span><br><span class="line">         <span class="string">&quot;https://pee6w651.mirror.aliyuncs.com&quot;</span>,</span><br><span class="line">         <span class="string">&quot;https://registry.docker-cn.com&quot;</span>,</span><br><span class="line">         <span class="string">&quot;http://hub-mirror.c.163.com&quot;</span></span><br><span class="line">     ]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="踩坑二：重启"><a href="#踩坑二：重启" class="headerlink" title="踩坑二：重启"></a>踩坑二：重启</h2><ul>
+<li>过程：</li>
+</ul>
+<ol>
+<li><p>在更新docker配置后，尝试接着运行minikube以测试</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minikube kubectl describe pod ngx</span><br></pre></td></tr></table></figure></li>
+<li><p>报错：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The connection to the server 127.0.0.1:52554 was refused - did you specify the right host or port?</span><br></pre></td></tr></table></figure></li>
+<li><p>尝试执行其他命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">minikube kubectl delete pod ngx</span><br><span class="line"></span><br><span class="line">minikube kubectl get pod ngx</span><br></pre></td></tr></table></figure></li>
+<li><p>报错依旧</p>
+</li>
+</ol>
+<ul>
+<li>修复</li>
+</ul>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="http://www.manongjc.com/detail/17-fxhwupmljriiugb.html">参考</a> 无效</p>
+<p>系统无systemctl命令</p>
+</li>
+<li><p>想起查看minikube的状态吧</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minikube status</span><br></pre></td></tr></table></figure></li>
+<li><p>通过状态发现未启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">minikube</span><br><span class="line">type: Control Plane</span><br><span class="line">host: Stopped</span><br><span class="line">kubelet: Stopped</span><br><span class="line">apiserver: Stopped</span><br><span class="line">kubeconfig: Stopped</span><br></pre></td></tr></table></figure></li>
+<li><p>start 一下？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">minikube start --image-mirror-country=<span class="string">&#x27;cn&#x27;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<p>😄  Darwin 12.5 (arm64) 上的 minikube v1.22.0<br>✨  根据现有的配置文件使用 docker 驱动程序<br>👍  Starting control plane node minikube in cluster minikube<br>🚜  Pulling base image …<br>🔄  Restarting existing docker container for “minikube” …<br>❗  The image ‘registry.cn-hangzhou.aliyuncs.com/&gt;google_containers/coredns/coredns:v1.8.0’ was not found; &gt;unable to add it to cache.<br>🐳  正在 Docker 20.10.7 中准备 Kubernetes v1.21.2…<br>❌  Unable to load cached images: loading cached images: stat /&gt;Users/xxxxxxx/.minikube/cache/images/registry.cn-hangzhou.&gt;aliyuncs.com/google_containers/coredns/coredns_v1.8.0: no &gt;such file or directory<br>🔎  Verifying Kubernetes components…<br>   ▪ Using image registry.cn-hangzhou.aliyuncs.com/google_containers/k8s-minikube/storage-provisioner:v5 (global image repository)<br>🌟  Enabled addons: storage-provisioner, default-storageclass<br>🏄  Done! kubectl is now configured to use “minikube” cluster &gt;and “default” namespace by defaul</p>
+</blockquote>
+<ol start="5">
+<li><p>再来一次，成功了。看来在重启docker后，minikube需要重新启动。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">minikube kubectl -- run ngx --image=nginx:alpine --force</span><br><span class="line"></span><br><span class="line">minikube kubectl get pod ngx</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NAME   READY   STATUS    RESTARTS   AGE</span><br><span class="line">ngx    1/1     Running   0          33s</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="祝福"><a href="#祝福" class="headerlink" title="祝福"></a>祝福</h2><p>祝大家好运！</p>
 
     
 
@@ -192,7 +305,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://www.xiaoxiaozi.com/2022/07/14/mind_the_step/" title="" target="_blank">http://www.xiaoxiaozi.com/2022/07/14/mind_the_step/</a>
+          <a href="http://www.xiaoxiaozi.com/2022/08/11/minikube_kubectl_fix1/" title="minikube mac 踩坑实录" target="_blank">http://www.xiaoxiaozi.com/2022/08/11/minikube_kubectl_fix1/</a>
         </li>
         
         <li>
@@ -209,7 +322,37 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">k8s</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">minikube</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/k8s//" class="article-tag-list-link color4">k8s</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/k8s/minikube//" class="article-tag-list-link color4">minikube</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
     
 
@@ -259,7 +402,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.xiaoxiaozi.com/2022/07/14/mind_the_step/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.xiaoxiaozi.com/2022/08/11/minikube_kubectl_fix1/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -274,18 +417,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          操作系统导论思维导图
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/02/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2022/08/09/juejin_docker_5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">掘金小册-开发者必备的 Docker 实践指南-笔记:Dockerfile</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -304,6 +438,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B8%A9%E5%9D%91%E4%B8%80%EF%BC%9Atoomanyrequests"><span class="toc-number">1.</span> <span class="toc-text">踩坑一：toomanyrequests</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B8%A9%E5%9D%91%E4%BA%8C%EF%BC%9A%E9%87%8D%E5%90%AF"><span class="toc-number">2.</span> <span class="toc-text">踩坑二：重启</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A5%9D%E7%A6%8F"><span class="toc-number">3.</span> <span class="toc-text">祝福</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
