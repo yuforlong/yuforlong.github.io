@@ -101,7 +101,7 @@ toc: true
 
 ## StatefulSet 与 Service 对象的关系
   
-    ![https://api2.mubu.com/v3/document_image/eccb38ac-d19e-40b2-9a8d-f0939afe52ee-1472901.jpg](https://api2.mubu.com/v3/document_image/eccb38ac-d19e-40b2-9a8d-f0939afe52ee-1472901.jpg)
+![https://api2.mubu.com/v3/document_image/eccb38ac-d19e-40b2-9a8d-f0939afe52ee-1472901.jpg](https://api2.mubu.com/v3/document_image/eccb38ac-d19e-40b2-9a8d-f0939afe52ee-1472901.jpg)
     
 ## 容器探针
 - 三种探针
@@ -219,4 +219,4 @@ toc: true
         - parallelism，它与 completions 相关，表示允许并发运行的 Pod 数量，避免过多占用资源。
     
 ## 其他：
-    - k8s中的资源限制CPU单位为毫核，比如：50m 对应的是 0.05 核（50/1000）
+- k8s中的资源限制CPU单位为毫核，比如：50m 对应的是 0.05 核（50/1000）
