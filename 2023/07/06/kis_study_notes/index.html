@@ -6,23 +6,47 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.xiaoxiaozi.com">
-  <title>童言童语1——小心台阶 | 小小子学习之路</title>
+  <title>K8s 入门实战笔记 | 小小子学习之路</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="和邻居一起带孩子去怀柔，游山玩水。 夜宿民宿，孩子觉得新奇（虽入夜，孩子有些紧张，哭声不止。）。楼梯上，跑来跑去。 忽指着楼梯拐角所贴提示：“小心台阶”而言“注意脚下”。 大笑~">
+  <meta name="description" content="看完就忘，记了笔记也忘发。现整理在blog中，以便翻阅。 基础知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="童言童语1——小心台阶">
-<meta property="og:url" content="http://www.xiaoxiaozi.com/2022/07/14/mind_the_step/index.html">
+<meta property="og:title" content="K8s 入门实战笔记">
+<meta property="og:url" content="http://www.xiaoxiaozi.com/2023/07/06/kis_study_notes/index.html">
 <meta property="og:site_name" content="小小子学习之路">
-<meta property="og:description" content="和邻居一起带孩子去怀柔，游山玩水。 夜宿民宿，孩子觉得新奇（虽入夜，孩子有些紧张，哭声不止。）。楼梯上，跑来跑去。 忽指着楼梯拐角所贴提示：“小心台阶”而言“注意脚下”。 大笑~">
+<meta property="og:description" content="看完就忘，记了笔记也忘发。现整理在blog中，以便翻阅。 基础知识">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-14T09:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-22T09:26:21.542Z">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/ad1bef2f-0dbf-4f7b-bc86-31a6b1e33b65-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/0a4be73d-62ac-4447-9f3b-d5efed30e578-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/6933b900-1871-4197-a84d-969dee12a7ca-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/a453fb5b-62b6-492f-bcf2-7710d6882483-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/50c3823a-431c-4950-9cb8-a325e3e65f9c-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/2ea25f63-92b9-4a73-90d0-8efe87c3f876-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/e997cd9b-1e4e-49a8-b84e-eff5a9bd87c7-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/1302b037-c12c-4f90-8cf4-1121ccf88916-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/6102a868-424d-4734-be54-10df932757f8-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/51d1cb85-9347-445a-a441-01bafac1bafb-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/d663c2cc-72df-4719-89f7-c15d17de2159-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/b027d5a6-c7c2-43a9-9b0e-aa6212ed430f-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/d59950a0-c763-4e97-808d-3432b9c6e7a1-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/ebc50a6b-b153-46ce-9ef3-6f121ee94688-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/34f95fca-95eb-4a42-afb1-93a867fd600a-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/2b3c3b10-962d-4442-b624-b21385adc84e-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/631e0551-418c-41ae-bed6-1578c10c93ba-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/c163549b-5acb-41f5-b8b4-2be14259a929-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/8e2ded54-5581-4191-bf89-e7096be687c7-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/185525c9-69dd-4312-85b3-f76323b789b2-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/9d505803-9e30-4fee-b715-185d97ac448b-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/9ebfc177-ed7f-4eba-99a7-285d50a61aa8-1472901.jpg">
+<meta property="og:image" content="https://api2.mubu.com/v3/document_image/479a2e88-c077-41a3-ba24-dfd33aa8e76e-1472901.jpg">
+<meta property="article:published_time" content="2023-07-06T06:55:00.000Z">
+<meta property="article:modified_time" content="2023-07-06T07:03:07.602Z">
 <meta property="article:author" content="xiaoxiaozi">
-<meta property="article:tag" content="童言童语">
-<meta property="article:tag" content="生活">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="K8s">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://api2.mubu.com/v3/document_image/ad1bef2f-0dbf-4f7b-bc86-31a6b1e33b65-1472901.jpg">
   
     <link rel="alternative" href="/atom.xml" title="小小子学习之路" type="application/atom+xml">
   
@@ -207,14 +231,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mind_the_step" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-kis_study_notes" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      童言童语1——小心台阶
+      K8s 入门实战笔记
     </h1>
   
 
@@ -226,8 +250,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2022/07/14/mind_the_step/" class="archive-article-date">
-        <time datetime="2022-07-14T09:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-07-14</time>
+<a href="/2023/07/06/kis_study_notes/" class="archive-article-date">
+        <time datetime="2023-07-06T06:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-07-06</time>
 </a>
 
   
@@ -240,7 +264,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">68字</span>
+      <span class="post-count">1.5k字</span>
     </span>
   </span>
 
@@ -249,7 +273,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">6分</span>
     </span>
   </span>
 </div>
@@ -260,10 +284,182 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>和邻居一起带孩子去怀柔，游山玩水。</p>
-<p>夜宿民宿，孩子觉得新奇（虽入夜，孩子有些紧张，哭声不止。）。楼梯上，跑来跑去。</p>
-<p>忽指着楼梯拐角所贴提示：“小心台阶”而言“注意脚下”。</p>
-<p>大笑~</p>
+    <p> 看完就忘，记了笔记也忘发。现整理在blog中，以便翻阅。</p>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><span id="more"></span>
+
+<ul>
+<li>YAML  <img src="https://api2.mubu.com/v3/document_image/ad1bef2f-0dbf-4f7b-bc86-31a6b1e33b65-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/ad1bef2f-0dbf-4f7b-bc86-31a6b1e33b65-1472901.jpg"></li>
+</ul>
+<h2 id="k8s-架构"><a href="#k8s-架构" class="headerlink" title="k8s 架构"></a>k8s 架构</h2><ul>
+<li>运行机制  <img src="https://api2.mubu.com/v3/document_image/0a4be73d-62ac-4447-9f3b-d5efed30e578-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/0a4be73d-62ac-4447-9f3b-d5efed30e578-1472901.jpg"></li>
+<li>思维导图  <img src="https://api2.mubu.com/v3/document_image/6933b900-1871-4197-a84d-969dee12a7ca-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/6933b900-1871-4197-a84d-969dee12a7ca-1472901.jpg">  <img src="https://api2.mubu.com/v3/document_image/a453fb5b-62b6-492f-bcf2-7710d6882483-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/a453fb5b-62b6-492f-bcf2-7710d6882483-1472901.jpg">  <img src="https://api2.mubu.com/v3/document_image/50c3823a-431c-4950-9cb8-a325e3e65f9c-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/50c3823a-431c-4950-9cb8-a325e3e65f9c-1472901.jpg"></li>
+<li>架构说明图  <img src="https://api2.mubu.com/v3/document_image/2ea25f63-92b9-4a73-90d0-8efe87c3f876-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/2ea25f63-92b9-4a73-90d0-8efe87c3f876-1472901.jpg"></li>
+</ul>
+<h2 id="k8s-以Pod-为核心资源"><a href="#k8s-以Pod-为核心资源" class="headerlink" title="k8s 以Pod 为核心资源"></a>k8s 以Pod 为核心资源</h2><ul>
+<li>一览图  <img src="https://api2.mubu.com/v3/document_image/e997cd9b-1e4e-49a8-b84e-eff5a9bd87c7-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/e997cd9b-1e4e-49a8-b84e-eff5a9bd87c7-1472901.jpg"></li>
+<li>资源关系图  <img src="https://api2.mubu.com/v3/document_image/1302b037-c12c-4f90-8cf4-1121ccf88916-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/1302b037-c12c-4f90-8cf4-1121ccf88916-1472901.jpg"></li>
+</ul>
+<h2 id="configmap、secret"><a href="#configmap、secret" class="headerlink" title="configmap、secret"></a>configmap、secret</h2><ul>
+<li>结合 env 使用  <img src="https://api2.mubu.com/v3/document_image/6102a868-424d-4734-be54-10df932757f8-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/6102a868-424d-4734-be54-10df932757f8-1472901.jpg"></li>
+<li>结合 amount使用  <img src="https://api2.mubu.com/v3/document_image/51d1cb85-9347-445a-a441-01bafac1bafb-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/51d1cb85-9347-445a-a441-01bafac1bafb-1472901.jpg"></li>
+</ul>
+<h2 id="k8s-Service工作原理"><a href="#k8s-Service工作原理" class="headerlink" title="k8s Service工作原理"></a>k8s Service工作原理</h2><p><img src="https://api2.mubu.com/v3/document_image/d663c2cc-72df-4719-89f7-c15d17de2159-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/d663c2cc-72df-4719-89f7-c15d17de2159-1472901.jpg"></p>
+<ul>
+<li>svc配置的关联关系  <img src="https://api2.mubu.com/v3/document_image/b027d5a6-c7c2-43a9-9b0e-aa6212ed430f-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/b027d5a6-c7c2-43a9-9b0e-aa6212ed430f-1472901.jpg"></li>
+<li>NodePort 与 Service、Deployment  <img src="https://api2.mubu.com/v3/document_image/d59950a0-c763-4e97-808d-3432b9c6e7a1-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/d59950a0-c763-4e97-808d-3432b9c6e7a1-1472901.jpg"></li>
+</ul>
+<h2 id="Ingress工作原理-7层代理"><a href="#Ingress工作原理-7层代理" class="headerlink" title="Ingress工作原理(7层代理)"></a>Ingress工作原理(7层代理)</h2><p><img src="https://api2.mubu.com/v3/document_image/ebc50a6b-b153-46ce-9ef3-6f121ee94688-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/ebc50a6b-b153-46ce-9ef3-6f121ee94688-1472901.jpg"></p>
+<ul>
+<li>Ngx官网的Ingress Controller结构图</li>
+</ul>
+<p><img src="https://api2.mubu.com/v3/document_image/34f95fca-95eb-4a42-afb1-93a867fd600a-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/34f95fca-95eb-4a42-afb1-93a867fd600a-1472901.jpg"></p>
+<blockquote>
+<p>Ingress 也只是一些 HTTP 路由规则的集合，相当于一份静态的描述文件，真正要把这些规则在集群里实施运行，还需要有另外一个东西，这就是 Ingress Controller，它的作用就相当于 Service 的 kube-proxy，能够读取、应用 Ingress 规则，处理、调度流量。<br>按理来说，Kubernetes 应该把 Ingress Controller 内置实现，作为基础设施的一部分，就像 kube-proxy 一样。<br>不过 Ingress Controller 要做的事情太多，与上层业务联系太密切，所以 Kubernetes 把 Ingress Controller 的实现交给了社区，任何人都可以开发 Ingress Controller，只要遵守 Ingress 规则就好。</p>
+</blockquote>
+<ul>
+<li><p>IngressClass</p>
+<p>  <img src="https://api2.mubu.com/v3/document_image/2b3c3b10-962d-4442-b624-b21385adc84e-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/2b3c3b10-962d-4442-b624-b21385adc84e-1472901.jpg"></p>
+<ul>
+<li><p>为什么要有IngressClass随着 </p>
+<blockquote>
+<p>Ingress 在实践中的大量应用，很多用户发现这种用法会带来一些问题，比如：&gt; 1. 由于某些原因，项目组需要引入不同的 Ingress Controller，但 Kubernetes 不允许这样做；</p>
+<ol start="2">
+<li>Ingress 规则太多，都交给一个 Ingress Controller 处理会让它不堪重负；</li>
+<li>多个 Ingress 对象没有很好的逻辑分组方式，管理和维护成本很高；</li>
+<li>集群里有不同的租户，他们对 Ingress 的需求差异很大甚至有冲突，无法部署在同一个 Ingress Controller 上。</li>
+</ol>
+</blockquote>
+</li>
+<li><p>ingress 和 Service、Ingress Class 的关系</p>
+</li>
+</ul>
+<p>  <img src="https://api2.mubu.com/v3/document_image/631e0551-418c-41ae-bed6-1578c10c93ba-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/631e0551-418c-41ae-bed6-1578c10c93ba-1472901.jpg"></p>
+</li>
+</ul>
+<h2 id="PV-amp-amp-PVC"><a href="#PV-amp-amp-PVC" class="headerlink" title="PV &amp;&amp; PVC"></a>PV &amp;&amp; PVC</h2><p><img src="https://api2.mubu.com/v3/document_image/c163549b-5acb-41f5-b8b4-2be14259a929-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/c163549b-5acb-41f5-b8b4-2be14259a929-1472901.jpg"></p>
+<ul>
+<li>Pod 与 PV/PVC的关系  <img src="https://api2.mubu.com/v3/document_image/8e2ded54-5581-4191-bf89-e7096be687c7-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/8e2ded54-5581-4191-bf89-e7096be687c7-1472901.jpg"></li>
+</ul>
+<h2 id="StatefulSet-与-Service-对象的关系"><a href="#StatefulSet-与-Service-对象的关系" class="headerlink" title="StatefulSet 与 Service 对象的关系"></a>StatefulSet 与 Service 对象的关系</h2><pre><code>![https://api2.mubu.com/v3/document_image/eccb38ac-d19e-40b2-9a8d-f0939afe52ee-1472901.jpg](https://api2.mubu.com/v3/document_image/eccb38ac-d19e-40b2-9a8d-f0939afe52ee-1472901.jpg)
+</code></pre>
+<h2 id="容器探针"><a href="#容器探针" class="headerlink" title="容器探针"></a>容器探针</h2><ul>
+<li>三种探针<ul>
+<li>Startup，启动探针，用来检查应用是否已经启动成功，适合那些有大量初始化工作要做，启动很慢的应用。</li>
+<li>Liveness，存活探针，用来检查应用是否正常运行，是否存在死锁、死循环。</li>
+<li>Readiness，就绪探针，用来检查应用是否可以接收流量，是否能够对外提供服务</li>
+</ul>
+</li>
+<li>探针结果的影响<ul>
+<li>如果 Startup 探针失败，Kubernetes 会认为容器没有正常启动，就会尝试反复重启，当然其后面的 Liveness 探针和 Readiness 探针也不会启动。</li>
+<li>如果 Liveness 探针失败，Kubernetes 就会认为容器发生了异常，也会重启容器。</li>
+<li>如果 Readiness 探针失败，Kubernetes 会认为容器虽然在运行，但内部有错误，不能正常提供服务，就会把容器从 Service 对象的负载均衡集合中排除，不会给它分配流量。</li>
+</ul>
+</li>
+<li>工作流程  <img src="https://api2.mubu.com/v3/document_image/185525c9-69dd-4312-85b3-f76323b789b2-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/185525c9-69dd-4312-85b3-f76323b789b2-1472901.jpg"></li>
+<li>三种探针配置的关键字段：（startupProbe、livenessProbe、readinessProbe 这三种探针的配置方式都一样）<ul>
+<li>periodSeconds，执行探测动作的时间间隔，默认是 10 秒探测一次。</li>
+<li>timeoutSeconds，探测动作的超时时间，如果超时就认为探测失败，默认是 1 秒。</li>
+<li>successThreshold，连续几次探测成功才认为是正常，对于 startupProbe 和livenessProbe 来说它只能是 1。</li>
+<li>failureThreshold，连续探测失败几次才认为是真正发生了异常，默认是 3 次。</li>
+</ul>
+</li>
+</ul>
+<h2 id="资源限制："><a href="#资源限制：" class="headerlink" title="资源限制："></a>资源限制：</h2><ul>
+<li>可以在资源中通过request、limit 进行单独Pod资源的限制</li>
+<li>可以通过namespace 结合 ResourceQuota 对整个NS进行限制<ul>
+<li>NS中的资源可以通过LimitRange，为Pod增加默认限额（否则已经有过限制 NS，是不允许创建未指定resources信息的POD）</li>
+<li>ResourceQuota示例  <img src="https://api2.mubu.com/v3/document_image/9d505803-9e30-4fee-b715-185d97ac448b-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/9d505803-9e30-4fee-b715-185d97ac448b-1472901.jpg"><ul>
+<li>说明：<ul>
+<li>所有 Pod 的需求总量最多是 10 个 CPU 和 10GB 的内存，上限总量是 10 个 CPU 和 20GB的内存。</li>
+<li>只能创建 100 个 PVC 对象，使用 100GB 的持久化存储空间。</li>
+<li>只能创建 100 个 Pod，100 个 ConfigMap，100 个 Secret，10 个 Service。</li>
+<li>只能创建 1 个 Job，1 个 CronJob，1 个 Deployment</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>LimitRange示例  <img src="https://api2.mubu.com/v3/document_image/9ebfc177-ed7f-4eba-99a7-285d50a61aa8-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/9ebfc177-ed7f-4eba-99a7-285d50a61aa8-1472901.jpg"><ul>
+<li>说明：<ul>
+<li>它设置了每个容器默认申请 0.2 的 CPU 和 50MB 内存，容器的资源上限是 0.5 的 CPU 和100MB 内存，每个 Pod 的最大使用量是 0.8 的 CPU 和 200MB 内存。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Prometheus"><a href="#Prometheus" class="headerlink" title="Prometheus"></a>Prometheus</h2><ul>
+<li><p>架构图</p>
+<p>  <img src="https://api2.mubu.com/v3/document_image/479a2e88-c077-41a3-ba24-dfd33aa8e76e-1472901.jpg" alt="https://api2.mubu.com/v3/document_image/479a2e88-c077-41a3-ba24-dfd33aa8e76e-1472901.jpg"></p>
+</li>
+<li><p>脚本备份：</p>
+</li>
+<li><p>Ubuntu 安装 kubeadm</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apt-get update &amp;&amp; apt-get install -y apt-transport-https curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | apt-key add -  </span><br><span class="line"></span><br><span class="line">cat &lt;&lt;<span class="string">EOF &gt;/etc/apt/sources.list.d/kubernetes.list </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">EOF</span> </span><br><span class="line"></span><br><span class="line">apt-get update apt-get install -y kubelet kubeadm kubectl</span><br></pre></td></tr></table></figure>
+
+</li>
+<li><p>Ngx Ingress Controller 还是看官方文档吧</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-manifests/">Installation with Manifests | NGINX Ingress Controller</a></p>
+</blockquote>
+</li>
+</ul>
+<h2 id="常用命令："><a href="#常用命令：" class="headerlink" title="常用命令："></a>常用命令：</h2><ul>
+<li>kubectl<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/8710a3a0aadd">kubectl命令行工具用法详解 - 简书 (jianshu.com)</a></p>
+</blockquote>
+<ul>
+<li>kubectl get pod</li>
+<li>kubectl get pod –v=9</li>
+<li>kubectl apply -f ngx-pod.yaml</li>
+<li>kubectl delete -f ngx-pod.yaml</li>
+<li>kubectl api-resources</li>
+<li>kubectl explain pod</li>
+</ul>
+</li>
+<li>kubectl pod 相关<ul>
+<li>kubectl run ngx –image=nginx:alpine –dry-run=client -o yaml<blockquote>
+<p>尝试生成Pod的yaml模板</p>
+</blockquote>
+</li>
+<li>kubectl cp wp.conf ngx-pod:/tmp <blockquote>
+<p>copy 文件至指定name的pod指定目录 中。其中ngx-pod为yaml文件中指定的pod metadata中的name</p>
+<p>准确地说，“kubectl cpomkubectl exec” 操作的应该是Pod 里的容器，需要用“-。”参数指定容器名，不过因为大多数 Pod 里只有一个容器，所以就省路了。</p>
+</blockquote>
+</li>
+<li>kubectl exec -it ngx-pod – sh<blockquote>
+<p>交互式进入ngx-pod内部，并执行sh</p>
+</blockquote>
+</li>
+<li>kubectl logs ngx-pod<blockquote>
+<p>Kubernetes 的 Pod 不会在前台运行，只能在后台（相当于默认使用了参数 -d），所以输出信息不能直接看到。我们可以用命令 kubectl logs，它会把 Pod 的标准输出流信息展示给我们看</p>
+</blockquote>
+</li>
+<li>kubectl get pod</li>
+<li>kubectl describe pod ngx-pod<blockquote>
+<p>重点关注返回结果的Events信息</p>
+</blockquote>
+</li>
+<li>kubectl delete pod busy-pod</li>
+</ul>
+</li>
+<li>kubectl job 相关<ul>
+<li>kubectl create job echo-job –image=busybox –dry-run=client -o yaml<blockquote>
+<p>尝试生成job的yaml模板</p>
+</blockquote>
+</li>
+<li>部分spec属性及含义<ul>
+<li>activeDeadlineSeconds，设置 Pod 运行的超时时间。</li>
+<li>backoffLimit，设置 Pod 的失败重试次数。</li>
+<li>completions，Job 完成需要运行多少个 Pod，默认是 1 个。</li>
+<li>parallelism，它与 completions 相关，表示允许并发运行的 Pod 数量，避免过多占用资源。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h2><pre><code>- k8s中的资源限制CPU单位为毫核，比如：50m 对应的是 0.05 核（50/1000）
+</code></pre>
 
     
 
@@ -310,7 +506,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://www.xiaoxiaozi.com/2022/07/14/mind_the_step/" title="童言童语1——小心台阶" target="_blank">http://www.xiaoxiaozi.com/2022/07/14/mind_the_step/</a>
+          <a href="http://www.xiaoxiaozi.com/2023/07/06/kis_study_notes/" title="K8s 入门实战笔记" target="_blank">http://www.xiaoxiaozi.com/2023/07/06/kis_study_notes/</a>
         </li>
         
         <li>
@@ -332,11 +528,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">童言童语</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">生活</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">K8s</a>
         		</li>
       		
 		</ul>
@@ -348,7 +544,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/孩子//" class="article-tag-list-link color3">孩子</a>
+        			<a href="/categories/Docker//" class="article-tag-list-link color2">Docker</a>
         		</li>
       		
 		</ul>
@@ -403,7 +599,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.xiaoxiaozi.com/2022/07/14/mind_the_step/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://www.xiaoxiaozi.com/2023/07/06/kis_study_notes/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -418,18 +614,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2022/07/20/Operating_Systems_Three_Easy_Pieces_Mind_Map/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          操作系统导论思维导图
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/02/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2023/01/30/sweet_dreams/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">童言童语3——好想做梦</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -456,7 +643,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#k8s-%E6%9E%B6%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">k8s 架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#k8s-%E4%BB%A5Pod-%E4%B8%BA%E6%A0%B8%E5%BF%83%E8%B5%84%E6%BA%90"><span class="toc-number">3.</span> <span class="toc-text">k8s 以Pod 为核心资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#configmap%E3%80%81secret"><span class="toc-number">4.</span> <span class="toc-text">configmap、secret</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#k8s-Service%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text">k8s Service工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ingress%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86-7%E5%B1%82%E4%BB%A3%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text">Ingress工作原理(7层代理)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PV-amp-amp-PVC"><span class="toc-number">7.</span> <span class="toc-text">PV &amp;&amp; PVC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StatefulSet-%E4%B8%8E-Service-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">8.</span> <span class="toc-text">StatefulSet 与 Service 对象的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E6%8E%A2%E9%92%88"><span class="toc-number">9.</span> <span class="toc-text">容器探针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E9%99%90%E5%88%B6%EF%BC%9A"><span class="toc-number">10.</span> <span class="toc-text">资源限制：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prometheus"><span class="toc-number">11.</span> <span class="toc-text">Prometheus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">12.</span> <span class="toc-text">常用命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%EF%BC%9A"><span class="toc-number">13.</span> <span class="toc-text">其他：</span></a></li></ol>
                     </div>
                 </span>
             </div>
